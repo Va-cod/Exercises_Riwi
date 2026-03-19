@@ -41,3 +41,16 @@ def add_product():
   product = {"Name": name, "Price": price, "Quantity": quantity} # Dictionary with product data
   inventory.append(product) # Dictionary added to list
   print("Product added to inventory") 
+
+# Function to calculate and display statistics
+def calculate_statistics():
+  total_inventory = 0
+  print("\n * * * STATISTICS * * *")
+  for product in inventory:
+    total = product["Price"] * product["Quantity"] # Variable that stores the total cost for each product
+    total_inventory += total # Variable that stores the total cost of inventory
+    print(f"{product['Name']} ---> ${total}")
+  total_products = len(inventory)
+  print("-----------------------")
+  print(f"Total products: {total_products}")
+  print(f"Total inventory: {total_inventory}")
